@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Script from "next/script";
 import { Shell } from "@/components/Shell";
 
@@ -59,7 +59,6 @@ const answers = [
 ];
 
 export default function MathLabPage() {
-  const mathRef = useRef<HTMLDivElement>(null);
   const [stepIndex, setStepIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [checked, setChecked] = useState(false);
@@ -67,9 +66,9 @@ export default function MathLabPage() {
   const [completed, setCompleted] = useState(false);
 
   const typesetMath = useCallback(() => {
-    if (typeof window !== "undefined" && window.MathJax?.typesetPromise && mathRef.current) {
-      window.MathJax.typesetClear?.([mathRef.current]);
-      void window.MathJax.typesetPromise([mathRef.current]);
+    if (typeof window !== "undefined" && window.MathJax?.typesetPromise) {
+      window.MathJax.typesetClear?.();
+      void window.MathJax.typesetPromise();
     }
   }, []);
 
@@ -128,7 +127,7 @@ export default function MathLabPage() {
             <div className="math-side-note"><span>💡</span><p>You can revisit any step whenever you need a refresher.</p></div>
           </aside>
 
-          <section className="math-lesson-card" ref={mathRef}>
+          <section className="math-lesson-card">
             <div className="math-card-top"><span className="math-step-chip">STEP {String(stepIndex + 1).padStart(2, "0")}</span><span className="math-xp-chip">+5 XP potential</span></div>
             <h2>{steps[stepIndex].title}</h2>
             <p className="math-explanation">{steps[stepIndex].explanation}</p>
@@ -153,7 +152,7 @@ export default function MathLabPage() {
           </section>
         </div>
 
-        <section className="math-quiz-card" id="math-quick-check" ref={undefined}>
+        <section className="math-quiz-card" id="math-quick-check">
           <div className="math-quiz-heading"><span>🎯</span><div><p className="eyebrow">QUICK CHECK</p><h2>Which pair helps factorise the equation?</h2><p>For x² − 5x + 6 = 0, choose two numbers whose product is 6 and whose sum is −5.</p></div></div>
           <div className="math-answer-list">
             {answers.map((answer, index) => (
@@ -172,7 +171,7 @@ export default function MathLabPage() {
           <p className="eyebrow">BUILT FOR LONG EQUATIONS</p>
           <h2>Math can take as much space as it needs.</h2>
           <p>Multi-line derivations, fractions, roots, exponents, and aligned equations can all be rendered in the lesson flow.</p>
-          <div className="math-equation-wrap math-equation-long" ref={mathRef}>
+          <div className="math-equation-wrap math-equation-long">
             <div className="math-equation">\[\begin{aligned} (a+b)^2 &= (a+b)(a+b) \\ &= a^2 + ab + ba + b^2 \\ &= a^2 + 2ab + b^2 \end{aligned}\]</div>
           </div>
         </section>
