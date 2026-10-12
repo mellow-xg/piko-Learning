@@ -133,7 +133,7 @@ export default function MathLabPage() {
             <p className="math-explanation">{steps[stepIndex].explanation}</p>
 
             <div className="math-equation-wrap" aria-label="Mathematical equation">
-              <div className="math-equation">\[{steps[stepIndex].equation}\]</div>
+              <div className="math-equation">{`\[${steps[stepIndex].equation}\]`}</div>
             </div>
 
             <div className="math-note"><span>🧠</span><div><strong>Think about this</strong><p>{steps[stepIndex].note}</p></div></div>
@@ -172,7 +172,7 @@ export default function MathLabPage() {
           <h2>Math can take as much space as it needs.</h2>
           <p>Multi-line derivations, fractions, roots, exponents, and aligned equations can all be rendered in the lesson flow.</p>
           <div className="math-equation-wrap math-equation-long">
-            <div className="math-equation">\[\begin{aligned} (a+b)^2 &= (a+b)(a+b) \\ &= a^2 + ab + ba + b^2 \\ &= a^2 + 2ab + b^2 \end{aligned}\]</div>
+            <div className="math-equation">{`\[ \begin{aligned} (a+b)^2 &= (a+b)(a+b) \\ &= a^2 + ab + ba + b^2 \\ &= a^2 + 2ab + b^2 \end{aligned} \]`}</div>
           </div>
         </section>
       </Shell>
