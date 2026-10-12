@@ -41,20 +41,20 @@ const steps = [
   {
     title: "Solve each factor",
     explanation: "Set each bracket equal to zero and solve both small equations.",
-    equation: "\\begin{aligned}x - 2 &= 0 \\\\ x - 3 &= 0\\end{aligned}",
+    equation: String.raw`\\begin{aligned}x - 2 &= 0 \\\\ x - 3 &= 0\\end{aligned}`,
     note: "Add 2 to the first equation and add 3 to the second equation.",
   },
   {
     title: "Final answer",
     explanation: "The two solutions are 2 and 3. You can check them by substituting each value into the original equation.",
-    equation: "x = 2 \\quad \\text{or} \\quad x = 3",
+    equation: String.raw`x = 2 \\quad \\text{or} \\quad x = 3`,
     note: "Check: 2² - 5(2) + 6 = 0, and 3² - 5(3) + 6 = 0.",
   },
 ];
 
 const answers = [
-  { label: "2 and 3", correct: true, feedback: "Correct! 2 × 3 = 6 and 2 + 3 = 5, so the factor pair is 2 and 3; because the middle term is negative, we use -2 and -3." },
-  { label: "-2 and -3", correct: false, feedback: "Not quite. These numbers multiply to 6, but their sum is -5 — actually, that makes them the correct signed pair. Try reviewing the factorisation step." },
+  { label: "-2 and -3", correct: true, feedback: "Correct! (-2) × (-3) = 6 and (-2) + (-3) = -5." },
+  { label: "2 and 3", correct: false, feedback: "Their product is 6, but their sum is +5. We need a pair whose sum is -5." },
   { label: "1 and 6", correct: false, feedback: "Their product is 6, but their sum is 7. We need a pair whose sum is -5." },
 ];
 
