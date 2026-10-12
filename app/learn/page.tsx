@@ -48,5 +48,5 @@ export default function Learn() {
 
   if (loading) return <div className="screen-center"><div className="spinner" /></div>;
   if (!session) return <AuthScreen />;
-  return <Shell active="learn"><div className="page-head"><p className="eyebrow">LEARNING PATH</p><h1>Choose your next level</h1><p className="muted">Pick a course and start earning XP.</p></div><div className="course-grid">{courses.map((course) => <CourseCard key={course.id} course={course} />)}</div>{!courses.length && <div className="empty-card"><span>🧭</span><h3>No courses yet</h3><p>Publish a course in Supabase and it will appear here.</p></div>}</Shell>;
+  return <Shell active="learn"><div className="page-head"><p className="eyebrow">LEARNING PATH</p><h1>Choose your next level</h1><p className="muted">Pick a course and start earning XP.</p></div><a className="math-demo-link" href="/math-lab">∑ Try the interactive Math Lab →</a><div className="course-grid">{courses.map((course) => <CourseCard key={course.id} course={course} />)}</div>{!courses.length && <div className="empty-card"><span>🧭</span><h3>No courses yet</h3><p>Publish a course in Supabase and it will appear here.</p></div>}</Shell>;
 }
