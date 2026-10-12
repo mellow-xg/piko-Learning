@@ -41,13 +41,13 @@ const steps = [
   {
     title: "Solve each factor",
     explanation: "Set each bracket equal to zero and solve both small equations.",
-    equation: String.raw`\\begin{aligned}x - 2 &= 0 \\\\ x - 3 &= 0\\end{aligned}`,
+    equation: String.raw`\begin{aligned}x - 2 &= 0 \\ x - 3 &= 0\end{aligned}`,
     note: "Add 2 to the first equation and add 3 to the second equation.",
   },
   {
     title: "Final answer",
     explanation: "The two solutions are 2 and 3. You can check them by substituting each value into the original equation.",
-    equation: String.raw`x = 2 \\quad \\text{or} \\quad x = 3`,
+    equation: String.raw`x = 2 \quad \text{or} \quad x = 3`,
     note: "Check: 2² - 5(2) + 6 = 0, and 3² - 5(3) + 6 = 0.",
   },
 ];
